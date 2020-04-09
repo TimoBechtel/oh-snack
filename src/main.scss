@@ -1,0 +1,37 @@
+.oh-snack {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+
+  /* class added with JavaScript */
+  &.os-show {
+    -webkit-animation: oh-snack-fadein 0.5s;
+    animation: oh-snack-fadein 0.5s;
+    opacity: 1;
+    bottom: 30px;
+  }
+}
+
+@-webkit-keyframes oh-snack-fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes oh-snack-fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
