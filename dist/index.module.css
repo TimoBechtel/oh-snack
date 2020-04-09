@@ -1,0 +1,2 @@
+.oh-snack{position:fixed;z-index:1;bottom:0;opacity:0;transition:opacity .5s,bottom .5s}.oh-snack.os-show{-webkit-animation:oh-snack-fadein .5s;animation:oh-snack-fadein .5s;opacity:1;bottom:30px}@-webkit-keyframes oh-snack-fadein{0%{bottom:0;opacity:0}to{bottom:30px;opacity:1}}@keyframes oh-snack-fadein{0%{bottom:0;opacity:0}to{bottom:30px;opacity:1}}
+.oh-snack{font-family:sans-serif;min-width:250px;margin-left:-125px;background-color:#333;color:#ececec;text-align:center;border-radius:3px;padding:16px;left:50%}
