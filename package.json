@@ -24,7 +24,9 @@
     "url": "git+https://github.com/TimoBechtel/oh-snack.git"
   },
   "keywords": [
-    "javascript"
+    "javascript",
+    "snackbar",
+    "toast"
   ],
   "author": "Timo Bechtel",
   "license": "MIT",
