@@ -34,6 +34,7 @@
 ```sh
 npm install oh-snack
 ```
+or:
 
 ### CDN:
 
@@ -43,7 +44,23 @@ npm install oh-snack
 
 ## Usage
 
-### As module:
+### Add bundled CSS:
+
+#### Using a bundler:
+
+```javascript
+import 'oh-snack/dist/index.css';
+```
+
+or:
+
+#### CDN:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/oh-snack/dist/index.css" />
+```
+
+### Import module when using NPM:
 
 ```javascript
 import { snack } from 'oh-snack';
@@ -55,7 +72,7 @@ import { snack } from 'oh-snack';
 snack("Hi, I'm a snackbar notification 👋", 2500);
 ```
 
-<a href="https://timobechtel.github.io/oh-snack">View Demo</a>
+### ✨ <a href="https://timobechtel.github.io/oh-snack">View Demo</a>
 
 ## Run tests
 
