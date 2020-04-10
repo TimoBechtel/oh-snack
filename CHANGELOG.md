@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/TimoBechtel/oh-snack/compare/v1.0.0...v1.0.1) (2020-04-10)
+
+
+### Bug Fixes
+
+* **defaultTheme.scss:** fix centering issue ([8bb6435](https://github.com/TimoBechtel/oh-snack/commit/8bb643539e3fa17b328b46885a368989300d8ece))
+
 # 1.0.0 (2020-04-09)
 
 
