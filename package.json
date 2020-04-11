@@ -1,6 +1,6 @@
 {
   "name": "oh-snack",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Simple snackbar notification",
   "source": "src/index.js",
   "main": "dist/index.js",

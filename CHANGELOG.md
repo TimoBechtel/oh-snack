@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/TimoBechtel/oh-snack/compare/v1.2.0...v2.0.0) (2020-04-11)
+
+
+### Code Refactoring
+
+* **snack:** changed second parameter to accept a config object instead of duration value ([51ec508](https://github.com/TimoBechtel/oh-snack/commit/51ec5080c0adedee346ccb77492f9f9c8bf0db49))
+
+
+### BREAKING CHANGES
+
+* **snack:** second parameter now needs to be a config object. Breaks previous calls.
+
 # [1.2.0](https://github.com/TimoBechtel/oh-snack/compare/v1.1.0...v1.2.0) (2020-04-11)
 
 
