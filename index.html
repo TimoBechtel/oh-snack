@@ -16,12 +16,12 @@
       document
         .getElementById('show-snackbar')
         .addEventListener('click', () =>
-          snack(`Hi, I'm snackbar notification no. ${++count} 👋`, 2500)
+          snack(`Hi, I'm snackbar notification no. ${++count} 👋`)
         );
       document
         .getElementById('show-snackbar-sticky')
         .addEventListener('click', () => {
-          snack("Hi, I'm a sticky notification.");
+          snack("Hi, I'm a sticky notification.", { timeout: false });
         });
     </script>
   </body>
