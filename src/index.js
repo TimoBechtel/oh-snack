@@ -48,18 +48,22 @@ const createButton = (label, action) => {
   return button;
 };
 
-export const snack = (text, duration) => {
+export const snack = (text, { timeout = 2800, closeable = !timeout } = {}) => {
   const toast = createSnack(text, createOrGetContainer());
-  if (!duration) {
-    const button = createButton('&times;', () => toast.hide());
+  let currentTimeout;
+  if (closeable) {
+    const button = createButton('&times;', () => {
+      clearTimeout(currentTimeout);
+      toast.hide();
+    });
     button.className = 'os-close';
     toast.addTopping(button);
   }
   setTimeout(() => {
     toast.show();
-    if (duration)
-      setTimeout(() => {
+    if (timeout)
+      timeout = setTimeout(() => {
         toast.hide();
-      }, duration);
+      }, timeout);
   }, 10);
 };

@@ -74,10 +74,41 @@ import { snack } from 'oh-snack';
 ### Example:
 
 ```javascript
-snack("Hi, I'm a snackbar notification 👋", 2500);
+snack("Hi, I'm a snackbar notification 👋");
+
+snack("Hi, I'm a sticky notification.", { timeout: false });
 ```
 
 ### ✨ <a href="https://timobechtel.github.io/oh-snack">View Demo</a>
+
+### API
+
+```typescript
+/**
+ * Show a snackbar notification
+ * @param message Message to display
+ * @param config Configuration
+ */
+function snack(message: string, config: SnackConfiguration): void;
+```
+
+Configuration:
+
+```typescript
+{
+  /**
+   * Timeout in milliseconds after which notification is hidden.
+   * Set to false to enable sticky notification.
+   * @default 2800
+   */
+  timeout?: number | false;
+  /**
+   * Defines Whether a close button is shown
+   * @default !timeout
+   */
+  closeable?: boolean;
+}
+```
 
 ## Run tests
 
