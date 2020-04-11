@@ -1,5 +1,5 @@
 <h1 align="center">oh-snack</h1>
-<h3 align="center">Simple snackbar notification</h3>
+<h3 align="center">Simple snackbar notifications</h3>
 <p align="center">
   <a href="https://www.npmjs.com/package/oh-snack" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/oh-snack.svg">
@@ -27,6 +27,10 @@
 - [Contributing](#Contributing)
 - [License](#license)
 
+## About
+
+`oh-snack` displays stackable snackbar notifications.
+
 ## Install
 
 ### NPM:
@@ -34,6 +38,7 @@
 ```sh
 npm install oh-snack
 ```
+
 or:
 
 ### CDN:
