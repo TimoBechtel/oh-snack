@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/TimoBechtel/oh-snack/compare/v1.0.1...v1.1.0) (2020-04-11)
+
+
+### Features
+
+* add stackable notifications ([a401199](https://github.com/TimoBechtel/oh-snack/commit/a401199cacce3d4f735a1217fd10377bb5071220))
+
 ## [1.0.1](https://github.com/TimoBechtel/oh-snack/compare/v1.0.0...v1.0.1) (2020-04-10)
 
 
