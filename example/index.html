@@ -9,6 +9,7 @@
   </head>
   <body>
     <button id="show-snackbar">Show toast</button>
+    <button id="show-snackbar-sticky">Show sticky toast</button>
     <script type="module">
       import { snack } from './dist/index.module.js';
       let count = 0;
@@ -17,6 +18,11 @@
         .addEventListener('click', () =>
           snack(`Hi, I'm snackbar notification no. ${++count} 👋`, 2500)
         );
+      document
+        .getElementById('show-snackbar-sticky')
+        .addEventListener('click', () => {
+          snack("Hi, I'm a sticky notification.");
+        });
     </script>
   </body>
 </html>

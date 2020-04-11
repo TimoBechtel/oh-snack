@@ -1,22 +1,53 @@
 .oh-snack-container {
   position: fixed;
-  z-index: 1;
   bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
 }
 .oh-snack {
   position: relative;
-  height: 0;
-  overflow: hidden;
   bottom: -50px;
+  overflow: hidden;
+  padding: 0;
+  width: fit-content;
   opacity: 0;
-  padding: 0 25px;
-  transition: opacity 0.5s, height 0.5s, padding 0.5s, bottom 0.5s;
+  transition: all 0.5s;
 
   /* class added with JavaScript */
   &.os-show {
-    opacity: 1;
-    height: auto;
     bottom: 30px;
-    padding: 20px 25px;
+    padding: 10px 0;
+    opacity: 1;
+    .os-content {
+      padding: 20px 25px;
+      height: auto;
+    }
+  }
+
+  .os-content {
+    position: relative;
+    padding: 0 25px;
+    height: 0;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    p {
+      width: 100%;
+      margin: 0;
+      padding: 5px 0;
+    }
+    .os-close {
+      display: block;
+      margin: 0 -10px 0 10px;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      outline: none;
+      border: none;
+      background: 0;
+      font-size: 28px;
+      line-height: 30px;
+    }
   }
 }
