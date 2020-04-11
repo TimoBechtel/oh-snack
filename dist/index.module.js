@@ -1,2 +1,2 @@
-var e,o=function(o,s){void 0===s&&(s=2800),e||(e=document.createElement("div"),document.body.appendChild(e)),e.innerHTML=o,e.className="oh-snack os-show",setTimeout(function(){e.className=e.className.replace("os-show","")},s)};export{o as snack};
+var e,n=function(){return e||((e=document.createElement("div")).className="oh-snack-container",document.body.appendChild(e)),e},o=function(e,o){void 0===o&&(o=2800);var t=document.createElement("div");t.innerHTML=e,t.className="oh-snack",n().appendChild(t),setTimeout(function(){t.className+=" os-show",setTimeout(function(){t.className=t.className.replace("os-show",""),setTimeout(function(){n().removeChild(t)},500)},o)},10)};export{o as snack};
 //# sourceMappingURL=index.module.js.map

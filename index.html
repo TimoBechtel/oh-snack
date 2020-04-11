@@ -11,10 +11,11 @@
     <button id="show-snackbar">Show toast</button>
     <script type="module">
       import { snack } from './dist/index.module.js';
+      let count = 0;
       document
         .getElementById('show-snackbar')
         .addEventListener('click', () =>
-          snack("Hi, I'm a snackbar notification 👋", 2500)
+          snack(`Hi, I'm snackbar notification no. ${++count} 👋`, 2500)
         );
     </script>
   </body>
