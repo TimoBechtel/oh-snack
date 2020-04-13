@@ -89,10 +89,10 @@ snack("Hi, I'm a sticky notification.", { timeout: false });
  * @param message Message to display
  * @param config Configuration
  */
-function snack(message: string, config: SnackConfiguration): void;
+function snack(message: string, config?: SnackConfiguration): void;
 ```
 
-Configuration:
+SnackConfiguration:
 
 ```typescript
 {
@@ -107,6 +107,16 @@ Configuration:
    * @default !timeout
    */
   closeable?: boolean;
+  /**
+   * Show animation class
+   * @default 'os-show-default'
+   */
+  showAnimationClass?: string;
+  /**
+   * Hide animation class
+   * @default 'os-hide-default'
+   */
+  hideAnimationClass?: string;
 }
 ```
 

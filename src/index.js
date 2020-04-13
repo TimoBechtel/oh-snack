@@ -12,7 +12,10 @@ const createOrGetContainer = () => {
   return snackContainer;
 };
 
-const createSnack = (text, parent) => {
+const createSnack = (
+  text,
+  { container, showAnimationClass = '', hideAnimationClass = '' }
+) => {
   const element = document.createElement('div');
   element.className = 'oh-snack';
   const textElement = document.createElement('p');
@@ -21,16 +24,16 @@ const createSnack = (text, parent) => {
   content.appendChild(textElement);
   content.className = 'os-content';
   element.appendChild(content);
-  parent.appendChild(element);
+  container.appendChild(element);
   return {
     addTopping(htmlElement) {
       content.appendChild(htmlElement);
     },
     show() {
-      element.className += ' os-show';
+      element.classList.add(showAnimationClass);
     },
     hide() {
-      element.className = element.className.replace('os-show', '');
+      element.classList.add(hideAnimationClass);
       setTimeout(() => {
         this.destroy();
       }, 500);
@@ -48,8 +51,20 @@ const createButton = (label, action) => {
   return button;
 };
 
-export const snack = (text, { timeout = 2800, closeable = !timeout } = {}) => {
-  const toast = createSnack(text, createOrGetContainer());
+export const snack = (
+  text,
+  {
+    timeout = 2800,
+    closeable = !timeout,
+    showAnimationClass = 'os-show-default',
+    hideAnimationClass = 'os-hide-default',
+  } = {}
+) => {
+  const toast = createSnack(text, {
+    container: createOrGetContainer(),
+    showAnimationClass,
+    hideAnimationClass,
+  });
   let currentTimeout;
   if (closeable) {
     const button = createButton('&times;', () => {
@@ -59,11 +74,9 @@ export const snack = (text, { timeout = 2800, closeable = !timeout } = {}) => {
     button.className = 'os-close';
     toast.addTopping(button);
   }
-  setTimeout(() => {
-    toast.show();
-    if (timeout)
-      timeout = setTimeout(() => {
-        toast.hide();
-      }, timeout);
-  }, 10);
+  toast.show();
+  if (timeout)
+    timeout = setTimeout(() => {
+      toast.hide();
+    }, timeout);
 };

@@ -12,6 +12,16 @@ interface SnackConfiguration {
    * @default !timeout
    */
   closeable?: boolean;
+  /**
+   * Show animation class
+   * @default 'os-show-default'
+   */
+  showAnimationClass?: string;
+  /**
+   * Hide animation class
+   * @default 'os-hide-default'
+   */
+  hideAnimationClass?: string;
 }
 
 /**
@@ -19,4 +29,4 @@ interface SnackConfiguration {
  * @param message Message to display
  * @param config Configuration
  */
-export function snack(message: string, config: SnackConfiguration): void;
+export function snack(message: string, config?: SnackConfiguration): void;

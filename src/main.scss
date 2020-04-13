@@ -6,30 +6,19 @@
   width: 100%;
 }
 .oh-snack {
-  position: relative;
-  bottom: -50px;
-  overflow: hidden;
-  padding: 0;
   width: fit-content;
-  opacity: 0;
-  transition: all 0.5s;
 
   /* class added with JavaScript */
-  &.os-show {
-    bottom: 30px;
-    padding: 10px 0;
-    opacity: 1;
-    .os-content {
-      padding: 20px 25px;
-      height: auto;
-    }
+  &.os-show-default {
+    overflow: hidden;
+    animation: expand 3s ease, fade-in 0.6s, slide-in-bottom 0.6s ease;
+  }
+  &.os-hide-default {
+    overflow: hidden;
+    animation: fade-out 0.5s forwards, shrink 0.5s 0.1s forwards;
   }
 
   .os-content {
-    position: relative;
-    padding: 0 25px;
-    height: 0;
-    transition: all 0.5s;
     display: flex;
     align-items: center;
     p {
@@ -45,9 +34,54 @@
       height: 30px;
       outline: none;
       border: none;
-      background: 0;
+      background: none;
       font-size: 28px;
       line-height: 30px;
     }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes expand {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 800px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    max-height: 800px;
+  }
+  to {
+    max-height: 0;
   }
 }
