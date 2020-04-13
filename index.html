@@ -8,20 +8,41 @@
     <title>Test Page</title>
   </head>
   <body>
-    <button id="show-snackbar">Show toast</button>
-    <button id="show-snackbar-sticky">Show sticky toast</button>
+    <header>
+      <h1>
+        🥪 <br />
+        <a href="https://github.com/TimoBechtel/oh-snack">Oh-Snack</a>
+      </h1>
+    </header>
+    <main>
+      <button id="show-snackbar">Show toast</button>
+      <button id="show-snackbar-sticky">Show sticky toast</button>
+      <label for="position">Position:</label>
+      <select name="position" id="position">
+        <option value="topLeft">topLeft</option>
+        <option value="topCenter">topCenter</option>
+        <option value="topRight">topRight</option>
+        <option value="bottomRight">bottomRight</option>
+        <option value="bottomCenter" selected>bottomCenter</option>
+        <option value="bottomLeft">bottomLeft</option>
+      </select>
+    </main>
     <script type="module">
       import { snack } from './dist/index.module.js';
+
       let count = 0;
-      document
-        .getElementById('show-snackbar')
-        .addEventListener('click', () =>
-          snack(`Hi, I'm snackbar notification no. ${++count} 👋`)
-        );
+      document.getElementById('show-snackbar').addEventListener('click', () =>
+        snack(`Hi, I'm snackbar notification no. ${++count} 👋`, {
+          position: document.getElementById('position').value,
+        })
+      );
       document
         .getElementById('show-snackbar-sticky')
         .addEventListener('click', () => {
-          snack("Hi, I'm a sticky notification.", { timeout: false });
+          snack("Hi, I'm a sticky notification.", {
+            position: document.getElementById('position').value,
+            timeout: false,
+          });
         });
     </script>
   </body>
