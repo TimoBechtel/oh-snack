@@ -1,4 +1,4 @@
-<h1 align="center">oh-snack</h1>
+<h1 align="center">🥪 <br/> Oh-Snack</h1>
 <h3 align="center">Simple snackbar notifications</h3>
 <p align="center">
   <a href="https://www.npmjs.com/package/oh-snack" target="_blank">
@@ -30,6 +30,13 @@
 ## About
 
 `oh-snack` displays stackable snackbar notifications.
+
+It currently features:
+
+- configurable position on screen
+- custom animation classes
+- hide after timeout
+- optional close buttons
 
 ## Install
 
@@ -76,7 +83,10 @@ import { snack } from 'oh-snack';
 ```javascript
 snack("Hi, I'm a snackbar notification 👋");
 
-snack("Hi, I'm a sticky notification.", { timeout: false });
+snack("Hi, I'm a sticky notification up here.", {
+  position: 'topRight',
+  timeout: false,
+});
 ```
 
 ### ✨ <a href="https://timobechtel.github.io/oh-snack">View Demo</a>
@@ -96,6 +106,17 @@ SnackConfiguration:
 
 ```typescript
 {
+  /**
+   * Position on screen
+   * @default 'bottomCenter'
+   */
+  position?:
+    | 'topLeft'
+    | 'topCenter'
+    | 'topRight'
+    | 'bottomLeft'
+    | 'bottomCenter'
+    | 'bottomRight';
   /**
    * Timeout in milliseconds after which notification is hidden.
    * Set to false to enable sticky notification.

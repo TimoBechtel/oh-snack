@@ -1,15 +1,24 @@
 import './main.scss';
 import './defaultTheme.scss';
 
-let snackContainer;
+const snackContainer = {
+  topLeft: null,
+  topCenter: null,
+  topRight: null,
+  bottomRight: null,
+  bottomCenter: null,
+  bottomLeft: null,
+};
 
-const createOrGetContainer = () => {
-  if (!snackContainer) {
-    snackContainer = document.createElement('div');
-    snackContainer.className = 'oh-snack-container';
-    document.body.appendChild(snackContainer);
+const createOrGetContainer = (position = 'bottomCenter') => {
+  if (!snackContainer[position]) {
+    snackContainer[position] = document.createElement('div');
+    snackContainer[
+      position
+    ].className = `oh-snack-container os-${position.toLowerCase()}`;
+    document.body.appendChild(snackContainer[position]);
   }
-  return snackContainer;
+  return snackContainer[position];
 };
 
 const createSnack = (
@@ -54,6 +63,7 @@ const createButton = (label, action) => {
 export const snack = (
   text,
   {
+    position = 'bottomCenter',
     timeout = 2800,
     closeable = !timeout,
     showAnimationClass = 'os-show-default',
@@ -61,7 +71,7 @@ export const snack = (
   } = {}
 ) => {
   const toast = createSnack(text, {
-    container: createOrGetContainer(),
+    container: createOrGetContainer(position),
     showAnimationClass,
     hideAnimationClass,
   });

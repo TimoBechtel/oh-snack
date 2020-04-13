@@ -2,6 +2,17 @@ declare module 'oh-snack';
 
 interface SnackConfiguration {
   /**
+   * Position on screen
+   * @default 'bottomCenter'
+   */
+  position?:
+    | 'topLeft'
+    | 'topCenter'
+    | 'topRight'
+    | 'bottomLeft'
+    | 'bottomCenter'
+    | 'bottomRight';
+  /**
    * Timeout in milliseconds after which notification is hidden.
    * Set to false to enable sticky notification.
    * @default 2800

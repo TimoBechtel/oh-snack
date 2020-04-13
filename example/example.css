@@ -1,10 +1,40 @@
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  margin-top: 100px;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+main {
+  margin: 0 auto;
+  padding: 20px 20px;
+  max-width: 500px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+select,
 button {
   display: block;
+  margin: 20px 0;
+  padding: 13px 20px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+select {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+button {
+  border: none;
   background: rgb(53, 117, 255);
   color: white;
-  border: none;
-  padding: 13px 20px;
-  margin: 100px auto;
-  border-radius: 3px;
   cursor: pointer;
 }

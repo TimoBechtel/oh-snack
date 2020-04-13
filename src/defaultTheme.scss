@@ -1,11 +1,9 @@
 .oh-snack-container {
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 700px;
+  max-width: 500px;
+  padding: 10px;
 }
 
 .oh-snack {
-  margin: 0 auto;
   .os-content {
     padding: 20px 25px;
     margin-bottom: 20px;
