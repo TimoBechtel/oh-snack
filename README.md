@@ -33,10 +33,11 @@
 
 It currently features:
 
-- configurable position on screen
-- custom animation classes
-- hide after timeout
-- optional close buttons
+- notifications stack on top of each other, with fancy push animations
+- configurable position on screen, allowing multiple at once
+- custom animation classes, to create that fancy 3d spinning animation you always dreamed of
+- hide notifications after timeout
+- optional dismiss button
 
 ## Install
 
