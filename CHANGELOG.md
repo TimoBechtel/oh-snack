@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/TimoBechtel/oh-snack/compare/v2.0.0...v2.1.0) (2020-04-13)
+
+
+### Features
+
+* add configurable positions ([95224d1](https://github.com/TimoBechtel/oh-snack/commit/95224d185b9b85e777b460dbaceae86bdaa6f506))
+* **animation:** improve animation ([ebe6ef5](https://github.com/TimoBechtel/oh-snack/commit/ebe6ef5e0025df90d007a55b97221c3753156d9a))
+
 # [2.0.0](https://github.com/TimoBechtel/oh-snack/compare/v1.2.0...v2.0.0) (2020-04-11)
 
 
