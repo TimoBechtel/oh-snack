@@ -42,6 +42,20 @@
           snack("Hi, I'm a sticky notification.", {
             position: document.getElementById('position').value,
             timeout: false,
+            closeable: false,
+            toppings: [
+              {
+                label: "I'm a link.",
+                action: 'https://github.com/TimoBechtel/oh-snack',
+              },
+              {
+                label: 'Ok',
+                className: 'os-primary',
+                action: (toast) => {
+                  toast.hide();
+                },
+              },
+            ],
           });
         });
     </script>

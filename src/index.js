@@ -30,34 +30,50 @@ const createSnack = (
   const textElement = document.createElement('p');
   textElement.innerHTML = text;
   const content = document.createElement('div');
-  content.appendChild(textElement);
   content.className = 'os-content';
+  const header = document.createElement('div');
+  header.className = 'os-header';
+  header.appendChild(textElement);
+  content.appendChild(header);
   element.appendChild(content);
+  const toppings = document.createElement('div');
+  toppings.className = 'os-toppings';
+  content.appendChild(toppings);
   container.appendChild(element);
   return {
-    addTopping(htmlElement) {
-      content.appendChild(htmlElement);
+    addTopping({ label, className, action }) {
+      let htmlElement;
+      if (typeof action === 'string') {
+        htmlElement = document.createElement('a');
+        htmlElement.href = action;
+      } else {
+        htmlElement = document.createElement('button');
+        htmlElement.addEventListener('click', () => action(this));
+      }
+      htmlElement.innerHTML = label;
+      htmlElement.className = className;
+      if (className === 'os-close') {
+        header.appendChild(htmlElement);
+      } else {
+        toppings.appendChild(htmlElement);
+      }
     },
     show() {
       element.classList.add(showAnimationClass);
+      element.classList.remove(hideAnimationClass);
     },
-    hide() {
+    hide(destroy) {
       element.classList.add(hideAnimationClass);
-      setTimeout(() => {
-        this.destroy();
-      }, 500);
+      element.classList.remove(showAnimationClass);
+      if (destroy === true)
+        setTimeout(() => {
+          this.destroy();
+        }, 500);
     },
     destroy() {
       element.parentElement.removeChild(element);
     },
   };
-};
-
-const createButton = (label, action) => {
-  const button = document.createElement('button');
-  button.innerHTML = label;
-  button.addEventListener('click', action);
-  return button;
 };
 
 export const snack = (
@@ -68,6 +84,7 @@ export const snack = (
     closeable = !timeout,
     showAnimationClass = 'os-show-default',
     hideAnimationClass = 'os-hide-default',
+    toppings = [],
   } = {}
 ) => {
   const toast = createSnack(text, {
@@ -77,16 +94,21 @@ export const snack = (
   });
   let currentTimeout;
   if (closeable) {
-    const button = createButton('&times;', () => {
-      clearTimeout(currentTimeout);
-      toast.hide();
+    toast.addTopping({
+      label: '&times;',
+      className: 'os-close',
+      action: (toast) => {
+        clearTimeout(currentTimeout);
+        toast.hide(true);
+      },
     });
-    button.className = 'os-close';
-    toast.addTopping(button);
   }
+  toppings.forEach((topping) => {
+    toast.addTopping(topping);
+  });
   toast.show();
   if (timeout)
-    timeout = setTimeout(() => {
+    currentTimeout = setTimeout(() => {
       toast.hide();
     }, timeout);
 };
