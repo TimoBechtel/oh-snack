@@ -1,3 +1,10 @@
+# [2.2.0-alpha.1](https://github.com/TimoBechtel/oh-snack/compare/v2.1.0...v2.2.0-alpha.1) (2020-04-14)
+
+
+### Features
+
+* add actions ([dbfdbd6](https://github.com/TimoBechtel/oh-snack/commit/dbfdbd6ce21714c779aeb1bebc09309282b85d28))
+
 # [2.1.0](https://github.com/TimoBechtel/oh-snack/compare/v2.0.0...v2.1.0) (2020-04-13)
 
 
