@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/TimoBechtel/oh-snack/compare/v2.1.0...v2.1.1) (2020-06-22)
+
+
+### Bug Fixes
+
+* **readme:** fix links after branch renaming ([cefaae0](https://github.com/TimoBechtel/oh-snack/commit/cefaae0e84f25e8e8bbb36abf2cbc3ce2a2a5d3d))
+
 # [2.1.0](https://github.com/TimoBechtel/oh-snack/compare/v2.0.0...v2.1.0) (2020-04-13)
 
 
