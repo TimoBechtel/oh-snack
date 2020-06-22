@@ -4,7 +4,7 @@
   <a href="https://www.npmjs.com/package/oh-snack" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/oh-snack.svg">
   </a>
-  <a href="https://github.com/TimoBechtel/oh-snack/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/TimoBechtel/oh-snack/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/TimoBechtel/oh-snack" />
   </a>
 </p>
@@ -178,7 +178,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Distributed under the [MIT](https://github.com/TimoBechtel/oh-snack/blob/master/LICENSE) License.
+Distributed under the [MIT](https://github.com/TimoBechtel/oh-snack/blob/main/LICENSE) License.
 
 ---
 
