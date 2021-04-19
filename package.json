@@ -33,11 +33,11 @@
   },
   "homepage": "https://github.com/TimoBechtel/oh-snack#readme",
   "devDependencies": {
-    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "eslint": "^6.8.0",
-    "microbundle": "^0.12.0-next.8",
-    "node-sass": "^4.13.1",
-    "semantic-release": "^17.0.4"
+    "eslint": "^7.24.0",
+    "microbundle": "^0.13.0",
+    "node-sass": "^5.0.0",
+    "semantic-release": "^17.4.2"
   }
 }
