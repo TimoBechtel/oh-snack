@@ -1,6 +1,4 @@
-declare module 'oh-snack';
-
-interface SnackConfiguration {
+export interface SnackConfiguration {
   /**
    * Position on screen
    * @default 'bottomCenter'
@@ -34,10 +32,3 @@ interface SnackConfiguration {
    */
   hideAnimationClass?: string;
 }
-
-/**
- * Show a snackbar notification
- * @param message Message to display
- * @param config Configuration
- */
-export function snack(message: string, config?: SnackConfiguration): void;

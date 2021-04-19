@@ -1,0 +1,7 @@
+{
+  "include": ["src", "node_modules/microbundle/index.d.ts"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext"
+  }
+}

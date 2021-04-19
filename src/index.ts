@@ -1,5 +1,42 @@
-import './main.scss';
+import type { SnackConfiguration } from './configuration';
 import './defaultTheme.scss';
+import './main.scss';
+
+/**
+ * Show a snackbar notification
+ * @param message Message to display
+ * @param config Configuration
+ */
+export function snack(
+  message: string,
+  {
+    position = 'bottomCenter',
+    timeout = 2800,
+    closeable = !timeout,
+    showAnimationClass = 'os-show-default',
+    hideAnimationClass = 'os-hide-default',
+  }: SnackConfiguration = {}
+): void {
+  const toast = createSnack(message, {
+    container: createOrGetContainer(position),
+    showAnimationClass,
+    hideAnimationClass,
+  });
+  let currentTimeout: number;
+  if (closeable) {
+    const button = createButton('&times;', () => {
+      clearTimeout(currentTimeout);
+      toast.hide();
+    });
+    button.className = 'os-close';
+    toast.addTopping(button);
+  }
+  toast.show();
+  if (timeout)
+    setTimeout(() => {
+      toast.hide();
+    }, timeout);
+}
 
 const snackContainer = {
   topLeft: null,
@@ -10,7 +47,7 @@ const snackContainer = {
   bottomLeft: null,
 };
 
-const createOrGetContainer = (position = 'bottomCenter') => {
+function createOrGetContainer(position = 'bottomCenter') {
   if (!snackContainer[position]) {
     snackContainer[position] = document.createElement('div');
     snackContainer[
@@ -19,12 +56,12 @@ const createOrGetContainer = (position = 'bottomCenter') => {
     document.body.appendChild(snackContainer[position]);
   }
   return snackContainer[position];
-};
+}
 
-const createSnack = (
-  text,
+function createSnack(
+  text: string,
   { container, showAnimationClass = '', hideAnimationClass = '' }
-) => {
+) {
   const element = document.createElement('div');
   element.className = 'oh-snack';
   const textElement = document.createElement('p');
@@ -35,7 +72,7 @@ const createSnack = (
   element.appendChild(content);
   container.appendChild(element);
   return {
-    addTopping(htmlElement) {
+    addTopping(htmlElement: HTMLElement) {
       content.appendChild(htmlElement);
     },
     show() {
@@ -51,42 +88,14 @@ const createSnack = (
       element.parentElement.removeChild(element);
     },
   };
-};
+}
 
-const createButton = (label, action) => {
+const createButton = (
+  label: string,
+  action: (this: HTMLButtonElement, ev: MouseEvent) => any
+) => {
   const button = document.createElement('button');
   button.innerHTML = label;
   button.addEventListener('click', action);
   return button;
-};
-
-export const snack = (
-  text,
-  {
-    position = 'bottomCenter',
-    timeout = 2800,
-    closeable = !timeout,
-    showAnimationClass = 'os-show-default',
-    hideAnimationClass = 'os-hide-default',
-  } = {}
-) => {
-  const toast = createSnack(text, {
-    container: createOrGetContainer(position),
-    showAnimationClass,
-    hideAnimationClass,
-  });
-  let currentTimeout;
-  if (closeable) {
-    const button = createButton('&times;', () => {
-      clearTimeout(currentTimeout);
-      toast.hide();
-    });
-    button.className = 'os-close';
-    toast.addTopping(button);
-  }
-  toast.show();
-  if (timeout)
-    timeout = setTimeout(() => {
-      toast.hide();
-    }, timeout);
 };
