@@ -8,10 +8,10 @@
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "microbundle && npm run build:example",
-    "build:example": "microbundle build -f es -o example/dist/index.js",
+    "build": "microbundle --no-sourcemap && npm run build:example",
+    "build:example": "microbundle build --no-sourcemap -f es -o example/dist/index.js",
     "dev": "microbundle watch -f es -o example/dist/index.js",
-    "prepare": "npm run build",
+    "prepack": "npm run build",
     "test": "no tests defined; exit 0"
   },
   "files": [
@@ -22,9 +22,9 @@
     "url": "git+https://github.com/TimoBechtel/oh-snack.git"
   },
   "keywords": [
-    "javascript",
     "snackbar",
-    "toast"
+    "toast",
+    "notification"
   ],
   "author": "Timo Bechtel",
   "license": "MIT",
