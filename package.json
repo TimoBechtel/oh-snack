@@ -38,6 +38,6 @@
     "eslint": "^7.24.0",
     "microbundle": "^0.13.0",
     "node-sass": "^5.0.0",
-    "semantic-release": "^17.4.2"
+    "semantic-release": "^19.0.3"
   }
 }
